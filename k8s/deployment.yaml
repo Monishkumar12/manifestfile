@@ -22,4 +22,4 @@ spec:
           name: webapp
           ports:
             - containerPort: 8080
-              protocol: TCP
+              protocol: http
