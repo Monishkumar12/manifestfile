@@ -11,10 +11,12 @@ spec:
       app: webapp
   template:
     metadata:
-      annotations:
-        sidecar.istio.io/inject: "true"
       labels:
         app: webapp
+        version: v1
+        maistra.io/expose-route: "true"
+      annotations:
+        sidecar.istio.io/inject: 'true'
     spec:
       containers:
         - image: quay.io/monishkumar/project-demo:1.1-SNAPSHOT
@@ -22,4 +24,4 @@ spec:
           name: webapp
           ports:
             - containerPort: 8080
-              protocol: http
+              protocol: TCP
