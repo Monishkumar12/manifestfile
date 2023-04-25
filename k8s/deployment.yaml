@@ -19,7 +19,7 @@ spec:
         sidecar.istio.io/inject: 'true'
     spec:
       containers:
-        - image: quay.io/monishkumar/project-demo:1.1-SNAPSHOT
+        - image: quay.io/monishkumar/project-demo:dev
           imagePullPolicy: Always
           name: webapp
           ports:
