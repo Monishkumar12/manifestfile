@@ -4,6 +4,9 @@ resources:
 - deployment.yaml
 - service.yaml
 - route.yaml
+- deployment1.yaml
+- service1.yaml
+- route1.yaml
 images:
 - digest: sha256:271667f628ac915f1c1def37f2eeb68fd237ac35cbc41f8a53075c14c7760096
   name: quay.io/monishkumar/project-demo
