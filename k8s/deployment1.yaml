@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: productpage-dev1
+  labels:
+    app: productpage1
+    version: dev1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: productpage1
+      version: dev1
+  template:
+    metadata:
+      labels:
+        app: productpage1
+        version: dev1
+        maistra.io/expose-route: "true"
+      annotations: 
+        sidecar.istio.io/inject: "true"
+    spec:
+      containers:
+      - name: productpage
+        image: quay.io/monishkumar/project-demo:dev1
+        imagePullPolicy: Always
+        ports:
+        - name: tcp-8080
+          containerPort: 8080
+          protocol: TCP
