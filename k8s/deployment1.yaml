@@ -24,6 +24,6 @@ spec:
           imagePullPolicy: Always
           name: webapp1
           ports:
-            - name: tcp-8080
-            - containerPort: 8080
-              protocol: TCP
+          - name: tcp-8080
+            containerPort: 8080
+            protocol: TCP
