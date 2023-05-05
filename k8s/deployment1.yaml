@@ -1,9 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-    name: webapp1
+  name: webapp1
   labels:
     app: webapp1
+    version: dev1
 spec:
   replicas: 1
   selector:
@@ -20,9 +21,9 @@ spec:
         sidecar.istio.io/inject: 'true'
     spec:
       containers:
-        - image: quay.io/monishkumar/project-demo:dev1
+        - name: webapp1
+          image: quay.io/monishkumar/project-demo:dev1
           imagePullPolicy: Always
-          name: webapp1
           ports:
           - name: tcp-8080
             containerPort: 8080
