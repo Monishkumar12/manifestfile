@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp
+  labels:
+    app: webapp
+    version: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webapp
+      version: dev
+  template:
+    metadata:
+      labels:
+        app: webapp
+        version: dev
+        maistra.io/expose-route: "true"
+      annotations: 
+        sidecar.istio.io/inject: "true"
+    spec:
+      containers:
+      - name: webapp
+        image: quay.io/monishkumar/project-demo:dev
+        imagePullPolicy: Always
+        ports:
+        - name: tcp-8080
+          containerPort: 8080
+          protocol: TCP
