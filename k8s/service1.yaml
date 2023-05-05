@@ -8,9 +8,9 @@ spec:
     app: webapp1
     version: dev1
   ports:
-    - name: "tcp-8080"
-      port: 8080
-      targetPort: 8080
+    - name: "tcp-8000"
+      port: 8000
+      targetPort: 8000
       protocol: TCP
 
     
