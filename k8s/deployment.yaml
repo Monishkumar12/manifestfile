@@ -4,18 +4,15 @@ metadata:
   name: webapp
   labels:
     app: webapp
-    version: dev
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: webapp
-      version: dev
   template:
     metadata:
       labels:
         app: webapp
-        version: dev
         maistra.io/expose-route: "true"
       annotations:
         sidecar.istio.io/inject: 'true'
