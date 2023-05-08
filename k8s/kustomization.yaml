@@ -7,6 +7,9 @@ resources:
 - deployment1.yaml
 - service1.yaml
 - route1.yaml
+- desinationrule.yaml
+- virtualservice.yaml
+- gateway.yaml
 images:
 - digest: sha256:415a9951bee6e64305ad1f973e5444d408a793b9ce69ae09bd7eed624b401706
   name: quay.io/monishkumar/project-demo
