@@ -1,0 +1,17 @@
+kind: Gateway
+apiVersion: networking.istio.io/v1alpha3
+metadata:
+  namespace: project-cyclone
+  name: productpage-dev1-2-gateway
+  labels:
+    kiali_wizard: request_routing
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+    - port:
+        number: 80
+        name: http
+        protocol: HTTP
+      hosts:
+        - '*'
