@@ -8,6 +8,7 @@ resources:
 - service1.yaml
 - route1.yaml
 - destinationrule.yaml
+- destinationrule1.yaml
 - virtualservice.yaml
 - gateway.yaml
 images:
