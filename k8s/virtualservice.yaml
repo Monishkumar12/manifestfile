@@ -13,7 +13,7 @@ spec:
             subset: dev
           weight: 70
         - destination:
-            host: productpage-dev.project-cyclone.svc.cluster.local
+            host: productpage-dev1.project-cyclone.svc.cluster.local
             subset: dev1
           weight: 30 
   hosts:
