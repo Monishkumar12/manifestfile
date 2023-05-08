@@ -5,9 +5,10 @@ metadata:
   name: productpage-dev1-2
   labels:
     kiali_wizard: request_routing
-  annotations: ~
 spec:
   host: productpage-dev.project-cyclone.svc.cluster.local
+  trafficPolicy:    
+    loadBalancer: {} 
   subsets:
     - name: dev
       labels:
@@ -15,7 +16,4 @@ spec:
     - name: dev1
       labels:
         version: dev1
-  trafficPolicy:
-    loadBalancer:
-      simple: ROUND_ROBIN
-      consistentHash: ~
+
