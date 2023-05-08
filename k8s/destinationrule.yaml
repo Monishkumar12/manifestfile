@@ -6,7 +6,7 @@ metadata:
   labels:
     kiali_wizard: request_routing
 spec:
-  host: productpage-dev.project-cyclone.svc.cluster.local
+  host: '*'
   trafficPolicy:    
     loadBalancer: {} 
   subsets:
