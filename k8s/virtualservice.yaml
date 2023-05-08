@@ -1,0 +1,22 @@
+kind: VirtualService
+apiVersion: networking.istio.io/v1alpha3
+metadata:
+  namespace: project-cyclone
+  name: productpage-dev1-2
+  labels:
+    kiali_wizard: request_routing
+spec:
+  http:
+    - route:
+        - destination:
+            host: productpage-dev.project-cyclone.svc.cluster.local
+            subset: dev
+          weight: 70
+        - destination:
+            host: productpage-dev.project-cyclone.svc.cluster.local
+            subset: dev1
+          weight: 30 
+  hosts:
+    - '*'
+  gateways:
+    - project-cyclone/productpage-dev1-2-gateway
