@@ -1,0 +1,15 @@
+kind: DestinationRule
+apiVersion: networking.istio.io/v1alpha3
+metadata:
+  namespace: project-cyclone
+  name: productpage-dev1-2
+  labels:
+    kiali_wizard: request_routing
+spec:
+  host: productpage-dev1.project-cyclone.svc.cluster.local
+  trafficPolicy:    
+    loadBalancer: {} 
+  subsets:
+    - name: dev1
+      labels:
+        version: dev1
