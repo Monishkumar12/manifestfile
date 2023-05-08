@@ -2,7 +2,7 @@ kind: DestinationRule
 apiVersion: networking.istio.io/v1alpha3
 metadata:
   namespace: project-cyclone
-  name: productpage-dev1-2
+  name: productpage-dev1-2-3
   labels:
     kiali_wizard: request_routing
 spec:
